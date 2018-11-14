@@ -60,9 +60,8 @@ Make Composer globally accessible
 Create user
 
 ```
-useradd -m -p [password] -G adelphi [username]
+useradd -m -p [password] -G [group] [username]
 
-e.g. useradd -p "fiqLj3&lbre" -m -G adelphi nmehra
 ```
 
  Assign groups
