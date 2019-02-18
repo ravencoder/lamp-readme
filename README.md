@@ -6,9 +6,16 @@ Clear cache
 
 ```yum clean all```
 
- Update all libaries
+Update all libaries
 
 ```yum update -y```
+
+Update timezone, check timezone format
+
+```timedatectl list-timezones```
+
+Set timezone
+```timedatectl set-timezone [time_zone]```
 
 Restart server for some updates that requires it
 
