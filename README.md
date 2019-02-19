@@ -38,6 +38,10 @@ Install necessary libraries
 
 ```yum -y install mc wget bzip2 git gitflow```
 
+Install Yum replace plugin: https://github.com/iuscommunity/yum-plugin-replace
+
+```yum install yum-plugin-replace```
+
 Install mariaDB 10.1
 
 ```yum -y install mariadb101u-server```
