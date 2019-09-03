@@ -2,6 +2,10 @@ Set SE Linux to permissive
 
 ```vi /etc/selinux/config    # set SELINUX=permissive```
 
+Set SELinux as permissive without restarting
+
+```setenforce 0```
+
 Clear cache
 
 ```yum clean all```
@@ -70,10 +74,7 @@ Make Composer globally accessible
 
 Create user
 
-```
-useradd -m -p [password] -G [group] [username]
-
-```
+```useradd -m -p[password] -G [group] [username]```
 
  Assign groups
 
