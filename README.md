@@ -36,7 +36,7 @@ yum -y install https://rhel7.iuscommunity.org/ius-release.rpm
 
 Install PHP
 
-```yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mysql php71u-mbstring php71u-json php71u-soap```
+```yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mbstring php71u-json php71u-soap```
 
 Install necessary libraries
 
@@ -45,6 +45,10 @@ Install necessary libraries
 Install Yum replace plugin: https://github.com/iuscommunity/yum-plugin-replace
 
 ```yum install yum-plugin-replace```
+
+------------------------------------------------------
+
+Installing Database as on premise
 
 Install mariaDB 10.1
 
@@ -61,6 +65,14 @@ Systemctl doesnt display the outcome of all service management commands, so to b
 Securing the MariaDB Server
 
 ```mysql_secure_installation```
+
+Enable mariadb to run on Startup
+
+```systemctl enable mariadb```
+
+------------------------------------------------------
+
+Installing Composer
 
 Install Composer using cURL
 
@@ -101,7 +113,6 @@ mysql> CREATE DATABASE [projectname];
 mysql> GRANT ALL PRIVILEGES ON [projectname].* TO "[projectname]"@"localhost" IDENTIFIED BY "password";
 
 ```
-
  
 Make the necessary \*.conf changes for HTTPD
 
@@ -127,14 +138,6 @@ vi [projectname].conf
  </VirtualHost>
 ```
 
-Set /etc/hosts
-
-```
-vi /etc/hosts
-127.0.0.1   [projectname]
-127.0.0.1   [projectname]
-```
-
 Restart apache
 
 ```systemctl restart httpd```
@@ -146,3 +149,7 @@ Check status if OK
 Run configuration file syntax test
 
 ```apachectl configtest```
+
+Enable httpd to run on Startup
+
+```systemctl enable httpd```
