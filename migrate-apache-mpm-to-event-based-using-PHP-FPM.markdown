@@ -13,6 +13,13 @@ Edit 00-mpm.conf under /etc/httpd/conf.modules.d:
 sudo vim /etc/httpd/conf.modules.d/00-mpm.conf
 ```
 
+Comment out `mod_mpm_prefork.so` line and enable `mod_mpm_event.so`:
+
+```bash
+#LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+LoadModule mpm_event_module modules/mod_mpm_event.so
+```
+
 Save and restart httpd:
 
 ```shell
