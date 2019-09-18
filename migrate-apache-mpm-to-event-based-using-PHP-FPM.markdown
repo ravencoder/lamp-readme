@@ -67,7 +67,7 @@ sudo service php-fpm start
 
 Set it to auto-start on Startup:
 
-```bash
+```shell
 systemctl enable php-fpm
 ```
 
