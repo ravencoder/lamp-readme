@@ -32,11 +32,11 @@ Restart server for some updates that requires it
 shutdown --reboot now
 ```
 
-
 Add the EPEL repository
 
 ```bash
 yum -y install epel-release
+```
 
 Install the IUS repository
 
