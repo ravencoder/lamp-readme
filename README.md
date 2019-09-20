@@ -1,6 +1,8 @@
 Set SE Linux to permissive
 
-```vi /etc/selinux/config    # set SELINUX=permissive```
+```bash
+vi /etc/selinux/config    # set SELINUX=permissive
+```
 
 Set SELinux as permissive without restarting
 
@@ -16,33 +18,46 @@ Update all libaries
 
 Update timezone, check timezone format
 
-```timedatectl list-timezones```
+```bash
+timedatectl list-timezones
+```
 
 Set timezone
+
 ```timedatectl set-timezone [time_zone]```
 
 Restart server for some updates that requires it
 
-```shutdown --reboot now```
-
-
-Add the epel repo
-
+```bash
+shutdown --reboot now
 ```
+
+
+Add the EPEL repository
+
+```bash
 yum -y install epel-release
 
+Install the IUS repository
+
+```bash
 yum -y install https://rhel7.iuscommunity.org/ius-release.rpm
 ```
 
+
 Install PHP
 
-```yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mbstring php71u-json php71u-soap```
+```bash
+yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mbstring php71u-json php71u-soap
+```
 
 Install necessary libraries
 
 ```yum -y install mc wget bzip2 git gitflow```
 
 Install Yum replace plugin: https://github.com/iuscommunity/yum-plugin-replace
+
+This plug-in provides a yum replace command that replaces a specified package and installs any required dependencies at the same time.
 
 ```yum install yum-plugin-replace```
 
@@ -76,7 +91,9 @@ Installing Composer
 
 Install Composer using cURL
 
-```curl -sS https://getcomposer.org/installer | php```
+```bash
+curl -sS https://getcomposer.org/installer | php
+```
 
 Make Composer globally accessible
 
@@ -97,26 +114,27 @@ Create user
 
 Create project folder in /var/www/html
 
-```
+```bash
 mkdir [projectname]
 cd [projectname]
 ```
 
 Clone codebase from bitbucket
 
-```git clone git@bitbucket.org:[company]/[projectname].git .```
+```bash
+git clone git@bitbucket.org:[company]/[projectname].git .
+```
 
 Create mysql database
 
-```
-mysql> CREATE DATABASE [projectname];
-mysql> GRANT ALL PRIVILEGES ON [projectname].* TO "[projectname]"@"localhost" IDENTIFIED BY "password";
-
+```sql
+CREATE DATABASE [projectname];
+GRANT ALL PRIVILEGES ON [projectname].* TO "[projectname]"@"localhost" IDENTIFIED BY "password";
 ```
  
 Make the necessary \*.conf changes for HTTPD
 
-```
+```bash
 cd /etc/httpd/sites
 
 vi [projectname].conf
