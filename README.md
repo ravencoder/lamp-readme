@@ -38,10 +38,12 @@ Add the EPEL repository
 yum -y install epel-release
 ```
 
-Install the IUS repository
+Install the IUS repository: https://ius.io/setup
 
 ```bash
-yum -y install https://rhel7.iuscommunity.org/ius-release.rpm
+yum install \
+https://repo.ius.io/ius-release-el7.rpm \
+https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
 
 
